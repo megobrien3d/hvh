@@ -17,25 +17,26 @@ one-versus-rest and the N*(N-1)/2 planes required for one-versus-one.
 The results on this original version are modest: using the HOG_01, HOG_02, and 
 HOG_03 datasets from GTSRB, hvh was able to obtain the following results: 
 
-| -- Num classes used --  | -- Data Set --  | -- Classification Accuracy on Test Data --  | Num planes used
-|          8             |       HOG_01    |                   1.0                       |       3
-|          8             |       HOG_02    |                   1.0                       |       3
-|          8             |       HOG_03    |                   1.0                       |       3
-|          10            |       HOG_01    |                   0.9995                    |       4
-|          10            |       HOG_02    |                   0.9896                    |       4
-|          10            |       HOG_03    |                   0.991                     |       4
-|          16            |       HOG_01    |                   0.98                      |       4
-|          16            |       HOG_02    |                   0.9966                    |       4
-|          16            |       HOG_03    |                   0.9993                    |       4
-|          20            |       HOG_01    |                   0.9448                    |       5
-|          20            |       HOG_02    |                   0.986                     |       5
-|          20            |       HOG_03    |                   0.99                      |       5
-|          32            |       HOG_01    |                   0.891                     |       5
-|          32            |       HOG_02    |                   0.9385                    |       5
-|          32            |       HOG_03    |                   0.9353                    |       5
-|          42            |       HOG_01    |                   0.8213                    |       6
-|          42            |       HOG_02    |                   0.8767                    |       6
-|          42            |       HOG_03    |                   0.8665                    |       6
+| Num classes used | Data Set             |  Classification Accuracy on Test Data      | Num planes used |
+| ----------| ---------| --------- | --------- | 
+|          8             |       HOG_01    |                   1.0                       |       3  |
+|          8             |       HOG_02    |                   1.0                       |       3  |         
+|          8             |       HOG_03    |                   1.0                       |       3  |
+|          10            |       HOG_01    |                   0.9995                    |       4  |
+|          10            |       HOG_02    |                   0.9896                    |       4  |
+|          10            |       HOG_03    |                   0.991                     |       4  |
+|          16            |       HOG_01    |                   0.98                      |       4  |
+|          16            |       HOG_02    |                   0.9966                    |       4  |
+|          16            |       HOG_03    |                   0.9993                    |       4  |
+|          20            |       HOG_01    |                   0.9448                    |       5  |
+|          20            |       HOG_02    |                   0.986                     |       5  |
+|          20            |       HOG_03    |                   0.99                      |       5  |
+|          32            |       HOG_01    |                   0.891                     |       5  |
+|          32            |       HOG_02    |                   0.9385                    |       5  |
+|          32            |       HOG_03    |                   0.9353                    |       5  |
+|          42            |       HOG_01    |                   0.8213                    |       6  |
+|          42            |       HOG_02    |                   0.8767                    |       6  |
+|          42            |       HOG_03    |                   0.8665                    |       6  |
           
 More tests demonstrated the high variability of the half-versus-half method on the 
 particular partitioning into halves chosen. Because the goal is to save computation 
