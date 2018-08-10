@@ -74,6 +74,7 @@ methods of one-versus-rest and one-versus-one, and may have greater accuracy tha
 original attempts at this method. 
 
 ---------------------------------------------------------------------------------------
+# Code usage
 
 I used Python 2.7.5 when running this code.
 
