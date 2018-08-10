@@ -73,6 +73,48 @@ still has much potential to reduce the number of computations compared to the cu
 methods of one-versus-rest and one-versus-one, and may have greater accuracy than these 
 original attempts at this method. 
 
+---------------------------------------------------------------------------------------
+
+I used Python 2.7.5 when running this code.
+
+The results in tables 1-3 of the paper were obtained by running the file hvh.py as follows:
+
+python hvh.py NUM_CLASSES DATA_SET TRAIN_PROP
+
+For example, the first column of table 1 came from running "python hvh.py 8 HOG_01 0.8". 
+NUM_CLASSES corresponds to the size of the random subset of the 42 classes you want to 
+use from the GTSRB dataset. The DATA_SET had to be either "HOG_01", "HOG_02", or "HOG_03", 
+but if you write your own downloading logic, I'm sure you could use any set of feature 
+vectors you want. And TRAIN_PROP is the proportion of the data that you want to use as the
+training data (because the GTSRB data didn't have a dataset for training and one for testing,
+so I reserved a portion of the data to use as testing data). 
+
+
+The results in figure 1 came from making a box plot based off of the results obtained by 
+running vary_partitions.py. The general way to use this file is as follows:
+
+python vary_partitions.py NUM_CLASSES DATA_SET TRAIN_PROP NUM_TESTS
+
+Each of the above command line arguments are the same as for hvh.py with the exception of 
+the additional parameter NUM_TESTS corresponds to how many times you want to shuffle up
+the classes so as to create a new bucketization to check the classification accuracy on.
+For that particular figure, I ran the following: python vary_partitions.py 20 HOG_01 0.8 40
+The results in table 4 also came from running this file. I ran "python vary_partitions.py 
+42 DATA_SET 0.7 40", where DATA_SET was each of HOG_01, HOG_02, HOG_03. 
+
+
+For table 5, I used the file modify_partitions.py. The general way to call/use this file is
+as follows: 
+
+python modify_partitions.py NUM_CLASSES DATA_SET TRAIN_PROP NUM_TESTS NUM_PTS MAX_ERROR
+
+The new parameter "NUM_PTS" corresponds to how many points of the training data you will 
+use for each class to do the intermediate training on the planes because it would take too
+long to find the SVMs that separate the classes as desired if using all the data. The 
+parameter "MAX_ERROR" corresponds to the max allowable re-classification error for each 
+binary SVM used (as multiple binary SVMs are found and compiled to comprise the hvh SVM). 
+For that table, I used NUM_PTS = 100, NUM_CLASSES = 42, TRAIN_PROP = 0.7, and varied 
+the DATA_SET and MAX_ERROR. 
 
 
  
